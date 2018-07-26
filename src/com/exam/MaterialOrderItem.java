@@ -14,8 +14,8 @@ public class MaterialOrderItem extends OrderItem {
 	}
 
 	@Override
-	public boolean isTaxable() {
+	public boolean isTaxable()
+	{
 		return true;
 	}
-
 }

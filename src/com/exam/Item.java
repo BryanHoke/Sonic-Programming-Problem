@@ -3,7 +3,7 @@ package com.exam;
 /**
  * Represents a part or service that can be sold.
  *
- * care should be taken to ensure that this class is immutable since it
+ * Care should be taken to ensure that this class is immutable since it
  * is sent to other systems for processing that should not be able to    
  * change it in any way.
  *

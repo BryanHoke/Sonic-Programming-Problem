@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * Represents and Order that contains a collection of items.
  *
- * care should be taken to ensure that this class is immutable since it
+ * Care should be taken to ensure that this class is immutable since it
  * is sent to other systems for processing that should not be able 
  * to change it in any way.
  *
@@ -17,7 +17,7 @@ import java.util.*;
 public class Order {
 	private OrderItem[] orderItems;
 
-	public Order(OrderItem[]orderItems)
+	public Order(OrderItem[] orderItems)
 	{
 		this.orderItems = orderItems;
 	}

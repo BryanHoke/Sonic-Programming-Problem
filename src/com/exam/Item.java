@@ -44,7 +44,8 @@ public class Item implements Serializable {
 	}
 
 	@Override
-	public int hashCode() {
+	public int hashCode()
+	{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((key == null) ? 0 : key.hashCode());
@@ -54,7 +55,8 @@ public class Item implements Serializable {
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj)
+	{
 		if (this == obj)
 			return true;
 		if (obj == null)

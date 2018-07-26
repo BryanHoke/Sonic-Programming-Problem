@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.exam;
 
 import java.io.Serializable;

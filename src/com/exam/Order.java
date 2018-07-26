@@ -65,8 +65,15 @@ public class Order {
 	 *
 	 * @return Collection
 	 */
-	public Collection getItems()
+	public Collection<OrderItem> getItems()
 	{
-		return null;  // implement this method
+		ArrayList<OrderItem> items = new ArrayList<OrderItem>();
+		for (OrderItem item : orderItems) {
+			items.add(item);
+		}
+		Comparator<OrderItem> byName = (OrderItem o1, OrderItem o2)
+				-> o1.getItem().getName().compareTo(o2.getItem().getName());
+		items.sort(byName);
+		return items;
 	}
 }

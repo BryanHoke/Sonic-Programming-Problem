@@ -33,4 +33,23 @@ class OrderTest {
 		assertTrue(order2.getOrderTotal(0.225f) == 1.23f);
 		assertTrue(order2.getOrderTotal(0.0049f) == 1.00f);
 	}
+	
+	@Test 
+	void testGetItems()
+	{
+		Item item1 = new Item(new Integer(1), "Pickle Juice Snow Cone Slush", 1.69f);
+		Item item2 = new Item(new Integer(2), "Tots", 1.89f);
+		Item item3 = new Item(new Integer(3), "Crispy Tender Dinner", 3.99f);
+		OrderItem[] orderItems = {
+				new MaterialOrderItem(item1, 1),
+				new MaterialOrderItem(item2, 1),
+				new MaterialOrderItem(item3, 1)
+		};
+		Order order = new Order(orderItems);
+		OrderItem[] sortedOrderItems = new OrderItem[3];
+		order.getItems().toArray(sortedOrderItems);
+		assertEquals(sortedOrderItems[0].getItem().getName(), "Crispy Tender Dinner");
+		assertEquals(sortedOrderItems[1].getItem().getName(), "Pickle Juice Snow Cone Slush");
+		assertEquals(sortedOrderItems[2].getItem().getName(), "Tots");
+	}
 }

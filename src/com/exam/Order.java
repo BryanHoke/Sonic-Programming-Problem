@@ -1,6 +1,10 @@
 package com.exam;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
+
+
 
 /**
  * Represents and Order that contains a collection of items.
@@ -22,10 +26,37 @@ public class Order {
 		this.orderItems = orderItems;
 	}
 
-	// Returns the total order cost after the tax has been applied
+	/**
+	 * Returns the total order cost after the tax has been applied,
+	 * rounded to the nearest penny.
+	 */
 	public float getOrderTotal(float taxRate)
 	{
-		return 0; // implement this method
+		float total = 0;
+		for (OrderItem item : orderItems) {
+			float cost = item.getCost();
+			if (item.isTaxable()) {
+				cost += cost * taxRate;
+			}
+			total += cost;
+		}
+		
+		return roundToNearestPenny(total);
+	}
+	
+	// Returns the input rounded to the nearest penny (two decimal places).
+	// Rounding follows RoundingMode.HALF_UP.
+	private static float roundToNearestPenny(float cost)
+	{
+		// Uses BigDecimal for correctness, but allocation is relatively expensive
+		// Can be optimized by instead using a custom algorithm, if needed
+		
+		// The String constructor is used to avoid floating-point precision issues
+		// (E.g., using the float constructor, 1.005 is incorrectly rounded to 1.00)
+		// See https://bugs.java.com/bugdatabase/view_bug.do?bug_id=4508009
+		BigDecimal decimal = new BigDecimal(String.valueOf(cost));
+		decimal = decimal.setScale(2, RoundingMode.HALF_UP);
+		return decimal.floatValue();
 	}
 
 	/**

@@ -76,4 +76,28 @@ public class Order {
 		items.sort(byName);
 		return items;
 	}
+
+	@Override
+	public int hashCode()
+	{
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(orderItems);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Order other = (Order) obj;
+		if (!Arrays.equals(orderItems, other.orderItems))
+			return false;
+		return true;
+	}
 }

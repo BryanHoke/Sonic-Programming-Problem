@@ -7,6 +7,7 @@ package com.exam;
  *
  */
 public class ServiceOrderItem extends OrderItem {
+	private static final long serialVersionUID = -5682267935590395951L;
 
 	public ServiceOrderItem(Item item, int quantity) 
 	{

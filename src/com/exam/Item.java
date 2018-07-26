@@ -1,5 +1,7 @@
 package com.exam;
 
+import java.io.Serializable;
+
 /**
  * Represents a part or service that can be sold.
  *
@@ -12,7 +14,9 @@ package com.exam;
  * @author Joe Blow
  * @version 1.0
  */
-public class Item {
+public class Item implements Serializable {
+	private static final long serialVersionUID = 6324280474534734945L;
+	
 	private Integer key;
 	private String name;
 	private float price;

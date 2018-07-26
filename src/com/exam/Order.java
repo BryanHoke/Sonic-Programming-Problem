@@ -3,7 +3,7 @@ package com.exam;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
-
+import java.io.Serializable;
 
 
 /**
@@ -18,7 +18,9 @@ import java.util.*;
  * @author Joe Blow
  * @version 1.0
  */
-public class Order {
+public class Order implements Serializable {
+	private static final long serialVersionUID = 8171976868965919089L;
+	
 	private OrderItem[] orderItems;
 
 	public Order(OrderItem[] orderItems)

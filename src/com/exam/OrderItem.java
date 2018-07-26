@@ -3,6 +3,8 @@
  */
 package com.exam;
 
+import java.io.Serializable;
+
 /**
  * Represents an item in an Order by associating an order quantity and 
  * taxability with an Item to be ordered.
@@ -10,7 +12,9 @@ package com.exam;
  * @author bryanhoke
  *
  */
-public abstract class OrderItem {
+public abstract class OrderItem implements Serializable {
+	private static final long serialVersionUID = 2145889841373368256L;
+	
 	private Item item;
 	private int quantity;
 	

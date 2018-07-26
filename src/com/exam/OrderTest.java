@@ -2,9 +2,55 @@ package com.exam;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.io.*;
+
 import org.junit.jupiter.api.Test;
 
 class OrderTest {
+	
+	@Test
+	void test()
+	{
+		Item item1 = new Item(new Integer(1), "Bacon Breakfast Toaster", 2.99f);
+		Item item2 = new Item(new Integer(2), "Medium Tots", 1.89f);
+		Item item3 = new Item(new Integer(3), "tip", 1);
+		OrderItem[] orderItems = {
+				new MaterialOrderItem(item1, 1),
+				new MaterialOrderItem(item2, 2),
+				new ServiceOrderItem(item3, 1)
+		};
+		Order order = new Order(orderItems);
+		
+		// Test serialization
+		try {
+			byte[] bytes = serialize(order);
+			Order restoredOrder = deserialize(bytes, Order.class);
+			assertEquals(restoredOrder, order);
+		} catch (IOException e) {
+			fail("Order serialization failed: " + e.toString());
+		} catch (ClassNotFoundException e) {
+			fail("Order deserialization cast failed: " + e.toString());
+		}
+	}
+
+	private static byte[] serialize(Order order) 
+			throws IOException
+	{
+		ByteArrayOutputStream byteOutputStream = new ByteArrayOutputStream();
+		ObjectOutputStream objectOutputStream = new ObjectOutputStream(byteOutputStream);
+		objectOutputStream.writeObject(order);
+		objectOutputStream.close();
+		return byteOutputStream.toByteArray();
+	}
+	
+	private static Order deserialize(byte[] bytes, Class<Order> cls) 
+			throws IOException, ClassNotFoundException
+	{
+		ByteArrayInputStream byteInputStream = new ByteArrayInputStream(bytes);
+		ObjectInputStream objectInputStream = new ObjectInputStream(byteInputStream);
+		Object obj = objectInputStream.readObject();
+		return cls.cast(obj);
+	}
 
 	@Test
 	void testGetOrderTotal() 

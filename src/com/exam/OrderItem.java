@@ -37,6 +37,14 @@ public abstract class OrderItem {
 	}
 	
 	/**
+	 * Returns the (pre-tax) cost of ordering the specified quantity of the item.
+	 */
+	public float getCost()
+	{
+		return quantity * item.getPrice();
+	}
+	
+	/**
 	 * Returns whether the Item being ordered is taxable.
 	 * 
 	 * @return True if the Item is taxable, false otherwise.

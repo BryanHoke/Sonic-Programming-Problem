@@ -90,6 +90,12 @@ class OrderTest {
 		};
 		Order order4 = new Order(orderItems4);
 		assertTrue(order4.getOrderTotal(0.05f) == 0.11f);
+		
+		OrderItem[] orderItems5 = {
+				new MaterialOrderItem(item5, 30)
+		};
+		Order order5 = new Order(orderItems5);
+		assertTrue(order5.getOrderTotal(0.05f) == 0.32f);
 	}
 	
 	@Test 

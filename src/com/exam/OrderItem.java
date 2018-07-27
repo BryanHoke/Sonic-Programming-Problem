@@ -50,7 +50,7 @@ public abstract class OrderItem implements Serializable {
 	 */
 	public String getItemName()
 	{
-		return item.getName();
+		return (item != null) ? item.getName() : null;
 	}
 	
 	/**

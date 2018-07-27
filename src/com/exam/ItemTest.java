@@ -9,7 +9,8 @@ import java.util.Hashtable;
 class ItemTest {
 
 	@Test
-	void test() {
+	void test() 
+	{
 		Item item1a = new Item(new Integer(1), "item1", 1.0f);
 		Item item1b = new Item(new Integer(1), "item1", 1.0f);
 		Item item2  = new Item(new Integer(2), "item2", 2.0f);
@@ -28,5 +29,4 @@ class ItemTest {
 		table.put(item1b, "item1b");
 		assertEquals(table.get(item1a), "item1b");
 	}
-
 }

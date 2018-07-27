@@ -3,6 +3,8 @@ package com.exam;
 /**
  * Represents a material item in an order.
  * 
+ * Material items are taxable.
+ * 
  * @author bryanhoke
  *
  */

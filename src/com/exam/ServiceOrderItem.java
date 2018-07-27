@@ -3,6 +3,8 @@ package com.exam;
 /**
  * Represents a service item in an order.
  * 
+ * Service items are not taxable.
+ * 
  * @author bryanhoke
  *
  */

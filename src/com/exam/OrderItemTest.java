@@ -22,6 +22,7 @@ class OrderItemTest {
 		assertTrue(serviceItem1.getCost() == 0);
 		
 		// Make sure to avoid floating-point imprecision
+		// (0.01f * 10 == 0.099999994f)
 		Item item4 = new Item(new Integer(4), "item4", 0.01f);
 		ServiceOrderItem serviceItem2 = new ServiceOrderItem(item4, 10);
 		assertTrue(serviceItem2.getCost() == 0.1f);

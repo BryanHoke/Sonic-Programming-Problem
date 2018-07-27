@@ -28,16 +28,25 @@ public class Item implements Serializable {
 		this.price = price;
 	}
 
+	/**
+	 * Returns the Item key.
+	 */
 	public Integer getKey()
 	{
 		return key;
 	}
 
+	/**
+	 * Returns the name of the Item.
+	 */
 	public String getName()
 	{
 		return name;
 	}
 
+	/**
+	 * Returns the price of the Item.
+	 */
 	public float getPrice()
 	{
 		return price;

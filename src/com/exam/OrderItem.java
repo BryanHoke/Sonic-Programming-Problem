@@ -1,6 +1,7 @@
 package com.exam;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 /**
  * Represents an item in an Order by associating an order quantity and 
@@ -42,7 +43,11 @@ public abstract class OrderItem implements Serializable {
 	 */
 	public float getCost()
 	{
-		return quantity * item.getPrice();
+		// Use the BigDecimal String constructor to avoid floating-point imprecision
+		BigDecimal p = new BigDecimal(String.valueOf(item.getPrice()));
+		BigDecimal q = new BigDecimal(quantity);
+		BigDecimal cost = q.multiply(p);
+		return cost.floatValue();
 	}
 	
 	/**

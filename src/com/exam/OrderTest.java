@@ -83,7 +83,7 @@ class OrderTest {
 		Order order3 = new Order(new OrderItem[0]);
 		assertTrue(order3.getOrderTotal(okTaxRate) == 0);
 		
-		// Make sure results work correctly with floating-point limitations
+		// Make sure to avoid floating-point imprecision
 		Item item5 = new Item(new Integer(5), "Lucky Penny", 0.01f);
 		OrderItem[] orderItems4 = {
 				new MaterialOrderItem(item5, 10)

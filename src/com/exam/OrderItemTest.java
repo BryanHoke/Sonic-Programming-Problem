@@ -21,9 +21,9 @@ class OrderItemTest {
 		ServiceOrderItem serviceItem1 = new ServiceOrderItem(item3, 1);
 		assertTrue(serviceItem1.getCost() == 0);
 		
-		// Other tests ensure this result can be used for correct final values
+		// Make sure to avoid floating-point imprecision
 		Item item4 = new Item(new Integer(4), "item4", 0.01f);
 		ServiceOrderItem serviceItem2 = new ServiceOrderItem(item4, 10);
-		assertTrue(serviceItem2.getCost() == 0.099999994f);
+		assertTrue(serviceItem2.getCost() == 0.1f);
 	}
 }

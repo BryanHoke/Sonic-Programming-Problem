@@ -57,7 +57,7 @@ public class Order implements Serializable {
 			items.add(item);
 		}
 		Comparator<OrderItem> byName = (OrderItem o1, OrderItem o2)
-				-> o1.getItem().getName().compareTo(o2.getItem().getName());
+				-> o1.getItemName().compareTo(o2.getItemName());
 		items.sort(byName);
 		return items;
 	}

@@ -46,6 +46,14 @@ public abstract class OrderItem implements Serializable {
 	}
 	
 	/**
+	 * Returns the name of the Item being ordered.
+	 */
+	public String getItemName()
+	{
+		return item.getName();
+	}
+	
+	/**
 	 * Returns whether the Item being ordered is taxable.
 	 * 
 	 * @return True if the Item is taxable, false otherwise.

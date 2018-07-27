@@ -98,8 +98,8 @@ class OrderTest {
 		Order order = new Order(orderItems);
 		OrderItem[] sortedOrderItems = new OrderItem[3];
 		order.getItems().toArray(sortedOrderItems);
-		assertEquals(sortedOrderItems[0].getItem().getName(), "Crispy Tender Dinner");
-		assertEquals(sortedOrderItems[1].getItem().getName(), "Pickle Juice Snow Cone Slush");
-		assertEquals(sortedOrderItems[2].getItem().getName(), "Tots");
+		assertEquals(sortedOrderItems[0].getItemName(), "Crispy Tender Dinner");
+		assertEquals(sortedOrderItems[1].getItemName(), "Pickle Juice Snow Cone Slush");
+		assertEquals(sortedOrderItems[2].getItemName(), "Tots");
 	}
 }

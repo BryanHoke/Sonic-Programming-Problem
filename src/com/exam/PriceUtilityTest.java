@@ -15,5 +15,6 @@ class PriceUtilityTest {
 		assertTrue(PriceUtility.roundToNearestPenny(1.00f) == 1.00f);
 		assertTrue(PriceUtility.roundToNearestPenny(5.555f) == 5.56f);
 		assertTrue(PriceUtility.roundToNearestPenny(5.55f) == 5.55f);
+		assertTrue(PriceUtility.roundToNearestPenny(0.01f * 10 + 0.01f * 10 * 0.05f) == 0.11f);
 	}
 }

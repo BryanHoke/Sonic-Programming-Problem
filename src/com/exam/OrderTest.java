@@ -78,6 +78,10 @@ class OrderTest {
 		assertTrue(order2.getOrderTotal(0.115f) == 1.12f);
 		assertTrue(order2.getOrderTotal(0.225f) == 1.23f);
 		assertTrue(order2.getOrderTotal(0.0049f) == 1.00f);
+		
+		// Make sure empty orders work correctly
+		Order order3 = new Order(new OrderItem[0]);
+		assertTrue(order3.getOrderTotal(okTaxRate) == 0);
 	}
 	
 	@Test 

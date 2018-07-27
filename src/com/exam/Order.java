@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 
 /**
- * Represents and Order that contains a collection of items.
+ * Represents an Order that contains a collection of items.
  *
  * Care should be taken to ensure that this class is immutable since it
  * is sent to other systems for processing that should not be able 

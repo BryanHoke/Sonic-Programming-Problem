@@ -13,7 +13,7 @@ class OrderTest {
 	{
 		Item item1 = new Item(new Integer(1), "Bacon Breakfast Toaster", 2.99f);
 		Item item2 = new Item(new Integer(2), "Medium Tots", 1.89f);
-		Item item3 = new Item(new Integer(3), "tip", 1);
+		Item item3 = new Item(new Integer(3), "Roller-Skate Delivery", 1);
 		OrderItem[] orderItems = {
 				new MaterialOrderItem(item1, 1),
 				new MaterialOrderItem(item2, 2),
@@ -59,7 +59,7 @@ class OrderTest {
 		float okTaxRate = 0.08625f;
 		Item item1 = new Item(new Integer(1), "Bacon Breakfast Toaster", 2.99f);
 		Item item2 = new Item(new Integer(2), "Medium Tots", 1.89f);
-		Item item3 = new Item(new Integer(3), "tip", 1);
+		Item item3 = new Item(new Integer(3), "Roller-Skate Delivery", 1);
 		OrderItem[] orderItems1 = {
 				new MaterialOrderItem(item1, 1),
 				new MaterialOrderItem(item2, 2),
